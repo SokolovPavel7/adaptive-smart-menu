@@ -1,0 +1,116 @@
+html {
+    --navBg: #d4e7ee;
+    --color: #29838c;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+    position: relative;
+    width: 100%;
+    background: var(--navBg);
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.nav ul {
+    list-style: none;
+}
+.nav a {
+    text-decoration: none;
+}
+
+.visible-menu {
+    display: flex;
+}
+
+.visible-menu a {
+    display: block; /* чтобы сработал паддинг */
+    padding: 14px 20px;
+    font-size: 18px;
+    color: var(--color);
+}
+
+.visible-menu a:hover {
+    background: var(--color);
+    color: var(--white);
+}
+
+.burger {
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    right: 0;
+    padding: 0; /*в мозиле кнопка чуть шире, чем меню*/
+    border: 0;
+    outline: none;
+    background: var(--color);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.burger svg {
+    transition: 0.4s;
+}
+
+.burger.active svg {
+    transform: rotate(90deg);
+}
+
+.burger-count {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 0;
+    top: 50%;
+    text-align: center;
+    background: var(--color);
+    color: var(--white);
+    font-size: 14px;
+    border: 2px solid var(--white);
+    line-height: 22px;
+    border-radius: 50%;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+}
+
+.hidden-menu {
+    position: fixed;
+    right: 0;
+    top: 50px;
+    min-width: 250px;
+    padding: 10px 0;
+    background: var(--color);
+    transition: 0.4s;
+    transform: translateX(100%);
+}
+
+.hidden-menu.active {
+    transform: translateX(0);
+}
+
+.hidden-menu a {
+    padding: 10px 10px 10px 20px;
+    color: var(--white);
+    font-size: 18px;
+    display: block;
+}
+
+.hidden-menu a:hover {
+    background: var(--white);
+    color: var(--color);
+}
+
+.nav .hidden {
+    display: none;
+}
